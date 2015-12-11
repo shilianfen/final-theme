@@ -913,7 +913,10 @@ object {
 	margin: 0 auto;
 }
 .programs-content{
-	background-color: lightblue;
+	background: -webkit-linear-gradient(180deg, white, grey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(180deg, white, grey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(180deg, white, grey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(180deg, white, grey); /* Standard syntax */
 	width: 90%;
 	text-align: center;
 	margin: 0 auto;
@@ -928,11 +931,12 @@ object {
 	margin: 0 auto;
 }
 .content-area{
-	background-color: lightpink;
+	background-color: lightgrey;
 	border: .1em solid black;
 	text-align: center;
 	margin: 0 auto;
-	width: 30%;
+	width: 70%;
+	margin-top: 100px;
 }
 .site-footer{
 	background: -webkit-linear-gradient(90deg, lightblue, grey); /* For Safari 5.1 to 6.0 */
@@ -944,6 +948,7 @@ object {
 	margin: 250px auto 0 auto;
 	height: 100px;
 }
+
 .site-header{
 	background: -webkit-linear-gradient(90deg, grey, lightblue); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(90deg, grey, lightblue); /* For Opera 11.1 to 12.0 */
@@ -954,6 +959,9 @@ object {
 }
 .site-main{
 	margin-bottom: 300px;
+}
+.site-title a:hover{
+	color: white;
 }
 .site-title a{
 	font-size: 100px;
@@ -969,7 +977,18 @@ object {
 	text-shadow: 2px 2px black;
 	margin-left: 30%;
 }
-.site-info{
+.site-footer p{
+	font-size: 28px;
+	color: #000066;
+}
+.site-info a {
+	float: center;
+	text-decoration: none;
+	font-family: hobo;
+	color: black;
+	margin-top: 20px;
+}
+.site-info2 a{
 	float: center;
 	text-decoration: none;
 	font-family: hobo;
@@ -977,5 +996,39 @@ object {
 	margin-top: 20px;
 }
 .ls-post-container{
+	margin-top:100px;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+.programs-content{
+	margin-top: 150px;
+}
+.plugin-content {
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
+button{
+	width: 150px;
+	text-align: center;
 	margin-left: 45%;
+}
+.ring{
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+}
+.site-footer{
+	height: 170px;
+}
+.entry-title{
+	font-size: 30px;
+	color: #000066;
+}
+.aboutme-content{
+	padding: 50px 20px 50px 20px;
+}
+.programs-content{
+	padding: 30px 20% 30px 20%;
 }

@@ -46,7 +46,43 @@ get_header(); ?>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
 
-	<?php endwhile; // End of the loop. ?>
+<?php endwhile; // End of the loop. ?>
+
+<?php rewind_posts(); ?>
+
+<?php
+
+	//$args = array( ‘post_type’ => ‘cpc_item’, ‘posts_per_page’ => 10 );
+	$args = array('post_type' => 'cpc_item', 'posts_per_page' => 10);
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		
+		echo    '<button>Call us</button>';
+		echo '<div class="plugin-content">';
+
+		for ($i = 0; $i<1; $i++){
+			
+				the_content();
+			echo '</div>';
+		}
+		  
+		// echo    '<button>Call us</button>';
+		// 	the_content();
+		// echo '</div>';
+		
+		echo '<p class="ring">Ring!!!</p>';
+	endwhile;
+
+?>
+
+
+<script type="text/javascript">
+
+  jQuery( "button" ).click(function() {
+      jQuery( ".plugin-content" ).slideToggle( "slow" );
+  });
+
+</script>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

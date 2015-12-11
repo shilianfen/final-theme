@@ -22,6 +22,7 @@ get_header(); ?>
 		</header><!-- .entry-header -->
 
 		<div class="aboutme-content">
+			
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(

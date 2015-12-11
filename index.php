@@ -27,20 +27,14 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+
+
 				<div class="ls-post-container">
-					<?php the_title(); ?>
+					<h2><font color="#ff0066"><?php the_title(); ?></font></h2>
 					<?php the_content(); ?>
 				</div>
 
-				<?php
-
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-				?>
+			
 
 			<?php endwhile; ?>
 
@@ -48,9 +42,49 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php //get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
+
+<?php rewind_posts(); ?>
+
+<?php
+
+	//$args = array( ‘post_type’ => ‘cpc_item’, ‘posts_per_page’ => 10 );
+	$args = array('post_type' => 'cpc_item', 'posts_per_page' => 10);
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		
+		echo    '<button>Call us</button>';
+		echo '<div class="plugin-content">';
+
+		for ($i = 0; $i<1; $i++){
+			
+				the_content();
+			echo '</div>';
+		}
+		  
+		// echo    '<button>Call us</button>';
+		// 	the_content();
+		// echo '</div>';
+		
+		echo '<p class="ring">Ring!!!</p>';
+	endwhile;
+
+?>
+
+
+<script type="text/javascript">
+
+  jQuery( "button" ).click(function() {
+      jQuery( ".plugin-content" ).slideToggle( "slow" );
+  });
+
+</script>
+	
+
+	
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
